@@ -27,7 +27,7 @@ app.post('/', urlencodedParser, function (req, res) {
   outgoingPhone = globalVar.substr(0, 8);
 
   if(command == '/clearlist'){
-    listofEveryone.empty();
+    listofEveryone = []
     res.send('Successfully cleared the list');
   }
 
