@@ -11,7 +11,8 @@ var globalVar
 var userName
 var message
 var outgoingPhone
-
+var command
+var listofEveryone = []
 
 
 app.post('/', urlencodedParser, function (req, res) {
@@ -21,20 +22,26 @@ app.post('/', urlencodedParser, function (req, res) {
 
   globalVar = req.body.text;
   userName = req.body.user_name;
+  command = req.body.command;
 
- 
   outgoingPhone = globalVar.substr(0, 8);
 
+  if(command == '/addnumber'){
+    listofEveryone.push('+1' + globalVar);
+    res.send('Successfully added ' + globalVar + " to list");
+  }
+
+
+  if(command == '/slackoff'){
   if(outgoingPhone == 'everyone'){
-    outgoingPhone = ['+14165647680', '+14166028809', '+16472997733']
-    var arrayLength = outgoingPhone.length;
+    var arrayLength = listofEveryone.length;
     message = globalVar.substr(9,);
 
     for (var i = 0; i < arrayLength; i++){
        client.messages.create({
         body: 'From ' + userName + ': ' + message,
         from: '+16473608227',
-        to: outgoingPhone[i]
+        to: listofEveryone[i]
 
         })
       }
@@ -52,9 +59,8 @@ app.post('/', urlencodedParser, function (req, res) {
 
   }
   res.send('Successfully sent ' + message + ' to ' + outgoingPhone);
+}
 })
-
-
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`))
 
