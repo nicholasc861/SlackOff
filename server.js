@@ -16,7 +16,7 @@ app.post('/', urlencodedParser, function (req, res) {
   globalVar = req.body.text;
   userName = req.body.user_name;
   outgoingPhone = '+1' + globalVar.substr(0, 11);
-  message = globalVar.substr(12,);
+  message = globalVar.substr(11,);
   res.send('Successfully sent ' + message + ' to ' + outgoingPhone);
   console.log(globalVar);
   console.log(userName)
