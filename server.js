@@ -31,6 +31,10 @@ app.post('/', urlencodedParser, function (req, res) {
     res.send('Successfully cleared the list');
   }
 
+  if(command == '/list'){
+    res.send(listofEveryone);
+  }
+
   if(command == '/addnumber'){
     listofEveryone.push('+1' + globalVar);
     res.send('Successfully added ' + globalVar + " to list");
