@@ -26,6 +26,11 @@ app.post('/', urlencodedParser, function (req, res) {
 
   outgoingPhone = globalVar.substr(0, 8);
 
+  if(command == '/clearlist'){
+    listofEveryone.empty();
+    res.send('Successfully cleared the list');
+  }
+
   if(command == '/addnumber'){
     listofEveryone.push('+1' + globalVar);
     res.send('Successfully added ' + globalVar + " to list");
