@@ -15,7 +15,7 @@ var outgoingPhone
 app.post('/', urlencodedParser, function (req, res) {
   globalVar = req.body.text;
   userName = req.body.user_name;
-  outgoingPhone = globalVar.substr(0, 12);
+  outgoingPhone = '+1' + globalVar.substr(0, 12);
   message = globalVar.substr(13,);
   res.send('Successfully sent ' + message + ' to ' + outgoingPhone);
   console.log(globalVar);
@@ -27,7 +27,7 @@ app.post('/', urlencodedParser, function (req, res) {
 
 
     client.messages.create({
-    body: 'From ' + userName + ' ' + message,
+    body: 'From ' + userName + ': ' + message,
     from: '+16473608227',
     to: outgoingPhone
     })
