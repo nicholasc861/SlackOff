@@ -16,8 +16,8 @@ var listofEveryone = []
 
 
 app.post('/', urlencodedParser, function (req, res) {
-  var accountSid = 'REMOVED';
-  var authToken = 'REMOVED';
+  var accountSid = 'REMOVED KEY';
+  var authToken = 'REMOVED KEY';
   var client = require('twilio')(accountSid, authToken);
 
   globalVar = req.body.text;
