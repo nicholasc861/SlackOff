@@ -16,8 +16,10 @@ var listofEveryone = []
 
 
 app.post('/', urlencodedParser, function (req, res) {
-  var accountSid = 'AC069753dcf0568bc05d491ddb5dd4b5c4';
-  var authToken = '24b26bcadf2fbbb198593134e0572da9';
+
+  var accountSid = 'REMOVED KEY';
+  var authToken = 'REMOVED KEY';
+
   var client = require('twilio')(accountSid, authToken);
 
   globalVar = req.body.text;
@@ -71,5 +73,6 @@ app.post('/', urlencodedParser, function (req, res) {
 }
 })
 
-app.listen(port, () => console.log(`Example app listening on port ${port}!`))
+
+app.listen(port, () => console.log(`SlaffOff is listening on port ${port}!`))
 
