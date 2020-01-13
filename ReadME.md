@@ -1,5 +1,5 @@
 # SlackOff
-![Image of SlackOff](/original.png | width=200 height=200)
+![Image of SlackOff](/original.png | 250x250)
 ## Inspiration
 Although the ability to stay connected while away from home has vastly improved with the use of data, many individuals are unable to afford data. SlackOff was built to help users without data to stay connected with their team.
 
